@@ -1,20 +1,31 @@
 import React, {useState} from 'react';
-import {Text, TextInput, Title, Avatar, Appbar, Button, Checkbox} from 'react-native-paper';
+import {Text, TextInput, Title, Avatar, Badge, Appbar, Button, Checkbox, DefaultTheme, Provider as Paper} from 'react-native-paper';
 import {View, Image} from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons';
 
 export default function Welcome(){
   
   const [unchecked, setChecked] = useState(false);
+  const theme = {
+    ...DefaultTheme,
+    roundness: 2,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: '#348855',
+      accent: '#236622',
+    },
+  };
+
     return (
-      <View style={{backgroundColor: '#787'}}>
+      <Paper theme={theme}>
+      <View style={{backgroundColor: '#fff'}}>
           <Appbar.Header>
             <Appbar.Content title="TODO App" subtitle="Keep track of your daily work" />
             <Appbar.Action icon="dots-vertical" />
           </Appbar.Header>
           
             {/* Langin Page*/}
-            <View style={{margin: 15, padding: 15, backgroundColor: '#7f7'}}>
+            <View style={{margin: 15, padding: 15, backgroundColor: '#353'}}>
               <View style={{marginLeft: 'auto', marginRight: 'auto', paddingBottom: 15}}>
                 <Title>Getting things done with TODO</Title>
               </View>
@@ -28,7 +39,7 @@ export default function Welcome(){
               </View>
 
               {/* The Getting started Button*/}
-              <View style={{marginTop: 50, marginBottom: 10, width: 250, marginLeft: 'auto', marginRight: 'auto'}}>
+              <View style={{marginTop: 50, marginBottom: 10, width: 'auto', marginLeft: 'auto', marginRight: 'auto'}}>
                 <Button
                   mode="contained">
                   Getting Started
@@ -37,13 +48,12 @@ export default function Welcome(){
 
             </View>
 
-          <View style={{margin: 15, backgroundColor: '#7f7'}}>
+          <View style={{margin: 15, backgroundColor: '#353'}}>
 
             {/* The welcome page with form to register*/}
             <View style={{marginBottom: 15}}>
-              <View>
-                <Image source={require('./assets/mobile.png')} />
-                <Avatar.Image source={require('./assets/icon.png')} size="90" />
+              <View style={{width: 'auto', height: 'auto', marginLeft: 'auto', marginRight: 'auto'}}>
+                <Image source={require('./assets/mobile.svg')} />
               </View>
 
               <View style={{marginLeft: 'auto', marginRight: 'auto', padding: 10}}>
@@ -85,7 +95,7 @@ export default function Welcome(){
               </View>
 
               {/* The register Button*/}
-              <View style={{marginTop: 50, marginBottom: 10, width: 250, marginLeft: 'auto', marginRight: 'auto'}}>
+              <View style={{marginTop: 50, marginBottom: 10, width: 'auto', marginLeft: 'auto', marginRight: 'auto'}}>
                 <Button
                   mode="contained">
                   Register
@@ -96,37 +106,67 @@ export default function Welcome(){
               <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
                 <Text>Already have an account? 
                   <Button
-                    mode='flat'>
+                    style={{marginLeft: 5}}
+                    mode='contained'>
                     Sign in
                   </Button>
                 </Text>
               </View>
             </View>
         </View>
+
         {/* Sign in page*/}
-        <View style={{margin: 15, padding: 15, backgroundColor: '#7f7'}}>
+        <View style={{margin: 15, padding: 15, backgroundColor: '#353'}}>
           <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
             <View>
+              <Title>Welcome Back!</Title>
+            </View>
+            <SvgUri uri='./assets/icon.png' />
+          </View>
+
+          <View>
+            <TextInput
+              mode="outlined"
+              label="E-mail Address"
+              placeholder="Enter your email address" />
+              
+            <TextInput
+              mode="outlined"
+              label="Password"
+              placeholder="Enter your password" />
+          </View>
+
+          <View style={{marginTop: 50, marginBottom: 10, borderRadius: 5, width: 'auto', marginLeft: 'auto', marginRight: 'auto'}}>
+            <Button
+              mode="contained">
+              Login
+            </Button>
+          </View>
+        </View>
             
           {/* Last page*/}
-        <View style={{margin: 15, padding: 15, backgroundColor: '#7f7'}}>
-          <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
-            <View>
-              <Avatar.Image source={require('./assets/icon.png')} />
+        <View style={{margin: 15, padding: 15, backgroundColor: '#353'}}>
+          <View style={{backgroundColor: '#383', padding: 5}}>
+            <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
+              <View style={{padding: 5}}>
+                <Avatar.Image source={require('./assets/icon.png')} />
+              </View>
+            </View>
+
+            <View style={{marginLeft: 'auto', marginRight: 'auto', padding: 5}}>
+              <Title style={{color: '#fff'}}>Yasin Muhammed Tukur</Title>
             </View>
           </View>
 
-          <View style={{marginLeft: 'auto', marginRight: 'auto', padding: 5}}>
-            <Title>Yasin Muhammed Tukur</Title>
-          </View>
+          <View style={{backgroundColor: '#272', padding: 5}}>
+            <View style={{marginLeft: 'auto'}}>
+              <Title>Good Afternoon</Title>
+            </View>
 
-          <View style={{marginLeft: 'auto'}}>
-            <Title>Good Afternoon</Title>
-          </View>
-
-          <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
-            <View>
-              <Avatar.Icon name="date" />
+            <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
+              <View>
+                <Avatar.Icon name="date"  />
+              </View>
             </View>
           </View>
 
@@ -135,11 +175,11 @@ export default function Welcome(){
           </View>
 
           <View>
-            <View>
-              <View style={{flexDirection: 'row'}}>
+            <View style={{backgroundColor: '#393', borderRadius: 5, padding: 10}}>
+              <View style={{flexDirection: 'row', flex: 1}}>
                 <Text>Daily Task</Text>
-                <View style={{marginLeft: 'auto', height: 10, width: 10, borderRadius: 5}}>
-                  <MaterialIcons name="add" size="20"/>
+                <View style={{marginLeft: 'auto', marginRight: 0, paddingTop: 6}}>
+                  <Badge><MaterialIcons style={{color: '#fff'}} name="add"/></Badge>
                 </View>
             </View>
               
@@ -215,5 +255,6 @@ export default function Welcome(){
         </View>
 
       </View>
+      </Paper>
     );
 }
