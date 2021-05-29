@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import {Text, TextInput, Title, Avatar, Badge, Appbar, Button, Checkbox, DefaultTheme, Provider as Paper} from 'react-native-paper';
-import {View, Image} from 'react-native';
+import {TextInput, Card, Title, Avatar, Badge, Appbar, Button, Checkbox, DefaultTheme, Provider as Paper, Subheading, Paragraph} from 'react-native-paper';
+import {View, Image, TouchableOpacity} from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons';
+//import { Card } from 'native-base';
+import Mobile from './components/mobile';
 
 export default function Welcome(){
   
@@ -11,14 +13,14 @@ export default function Welcome(){
     roundness: 2,
     colors: {
       ...DefaultTheme.colors,
-      primary: '#348855',
-      accent: '#236622',
+      primary: '#349955',
+      accent: '#228823',
     },
   };
 
     return (
       <Paper theme={theme}>
-      <View style={{backgroundColor: '#fff'}}>
+      <View style={{backgroundColor: '#6a6'}}>
           <Appbar.Header>
             <Appbar.Content title="TODO App" subtitle="Keep track of your daily work" />
             <Appbar.Action icon="dots-vertical" />
@@ -31,11 +33,11 @@ export default function Welcome(){
               </View>
 
               <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                <Text>
+                <Paragraph>
                   ajjhdjkbfjkdvbrubrgr8 g8g9rhghrgiorhvivhihvruihreuih weuhweu iweiufiebfaubv v vbuiaugryufgyugrfuwgfwyugfwefgenwfweifeufghufbdshvjs b uyeuyf yveyuvbe uewbvdbs dhs vduyeufgyugfyeuqgfuiftiegw78ftew8fte8yefy ef gfwfgd kdvbds vdguewgf78ewtf7e98ep89qyp9dg;iF[FEFV NIIO;DSVVBSIUGUEFjkbvuivauigrfbuibuire 
                   uburebkyurfhjsvdburbfyufaeyvfyrvfwyeuf yuyegfueyfewb kvguf weueyegwfuewkf,jdv,jyuvfyueyewfugefiueywevddsh nc ydfew feweI;ioh[ewpoewgbuid fduy uifiuagc bf ewifewuifweuig ewiwege
                   hjbkgiuefyuewdjbcudv]]
-                </Text>
+                </Paragraph>
               </View>
 
               {/* The Getting started Button*/}
@@ -52,8 +54,8 @@ export default function Welcome(){
 
             {/* The welcome page with form to register*/}
             <View style={{marginBottom: 15}}>
-              <View style={{width: 'auto', height: 'auto', marginLeft: 'auto', marginRight: 'auto'}}>
-                <Image source={require('./assets/mobile.svg')} />
+              <View style={{width: 100, height: 100, backgroundColor: '#fff', marginTop: 15, marginLeft: 'auto', marginRight: 'auto'}}>
+                <Mobile style={{width: 200}}/>
               </View>
 
               <View style={{marginLeft: 'auto', marginRight: 'auto', padding: 10}}>
@@ -61,7 +63,7 @@ export default function Welcome(){
               </View>
 
               <View style={{marginLeft: 'auto', marginRight: 'auto', padding: 10}}>
-                <Text>Let's help you meet up your tasks</Text>
+                <Subheading>Let's help you meet up your tasks</Subheading>
               </View>
 
               <View>
@@ -102,15 +104,15 @@ export default function Welcome(){
                 </Button>
               </View>
 
-              {/* if already have account sign in instead</Text*/}
+              {/* if already have account sign in instead</Paragraph*/}
               <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                <Text>Already have an account? 
+                <Paragraph>Already have an account? 
                   <Button
                     style={{marginLeft: 5}}
                     mode='contained'>
                     Sign in
                   </Button>
-                </Text>
+                </Paragraph>
               </View>
             </View>
         </View>
@@ -121,7 +123,9 @@ export default function Welcome(){
             <View>
               <Title>Welcome Back!</Title>
             </View>
-            <SvgUri uri='./assets/icon.png' />
+            <View style={{width: 100, height: 100, marginLeft: 15}}>
+              <Mobile />
+            </View>
           </View>
 
           <View>
@@ -164,8 +168,8 @@ export default function Welcome(){
             </View>
 
             <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
-              <View>
-                <Avatar.Icon name="date"  />
+              <View style={{paddingBottom: 10}}>
+                <Avatar.Icon name="Clock"  />
               </View>
             </View>
           </View>
@@ -177,9 +181,9 @@ export default function Welcome(){
           <View>
             <View style={{backgroundColor: '#393', borderRadius: 5, padding: 10}}>
               <View style={{flexDirection: 'row', flex: 1}}>
-                <Text>Daily Task</Text>
+                <Paragraph>Daily Task</Paragraph>
                 <View style={{marginLeft: 'auto', marginRight: 0, paddingTop: 6}}>
-                  <Badge><MaterialIcons style={{color: '#fff'}} name="add"/></Badge>
+                  <TouchableOpacity><Badge style={{backgroundColor: '#000'}}><MaterialIcons style={{color: '#fff'}} name="add"/></Badge></TouchableOpacity>
                 </View>
             </View>
               
@@ -189,8 +193,8 @@ export default function Welcome(){
                   onPress={ () => {
                     setChecked(!unchecked)
                   }}/>
-                  <View style={{marginTop: 10}}>
-                    <Text>Learn programming by 12:00 am</Text>
+                  <View style={{marginTop: 7}}>
+                    <Paragraph>Learn programming by 12:00 am</Paragraph>
                   </View>
               </View>
 
@@ -201,7 +205,7 @@ export default function Welcome(){
                     setChecked(!unchecked)
                   }}/>
                   <View style={{marginTop: 10}}>
-                    <Text>Learn cooking by 2:00 pm</Text>
+                    <Paragraph>Learn cooking by 2:00 pm</Paragraph>
                   </View>
               </View>
 
@@ -212,7 +216,7 @@ export default function Welcome(){
                     setChecked(!unchecked)
                   }}/>
                   <View style={{marginTop: 10}}>
-                    <Text>Have launch by 3:00 pm</Text>
+                    <Paragraph>Have launch by 3:00 pm</Paragraph>
                   </View>
               </View>
 
@@ -223,7 +227,7 @@ export default function Welcome(){
                     setChecked(!unchecked)
                   }}/>
                   <View style={{marginTop: 10}}>
-                    <Text>Learn react native by 4:30 pm</Text>
+                    <Paragraph>Learn react native by 4:30 pm</Paragraph>
                   </View>
               </View>
 
@@ -234,7 +238,7 @@ export default function Welcome(){
                     setChecked(!unchecked)
                   }}/>
                   <View style={{marginTop: 10}}>
-                    <Text>Go visit mum by 6:00 pm</Text>
+                    <Paragraph>Go visit mum by 6:00 pm</Paragraph>
                   </View>
               </View>
 
@@ -245,7 +249,7 @@ export default function Welcome(){
                     setChecked(!unchecked)
                   }}/>
                   <View style={{marginTop: 10}}>
-                    <Text>Have dinner by 9:00 pm</Text>
+                    <Paragraph>Have dinner by 9:00 pm</Paragraph>
                   </View>
               </View>
 
