@@ -12,22 +12,8 @@ export default function addTask() {
     const [unchecked4, setChecked4] = useState(false);
     const [unchecked5, setChecked5] = useState(false);
 
-    const theme = {
-        ...DefaultTheme,
-        roundness: 2,
-        colors: {
-          ...DefaultTheme.colors,
-          primary: '#349955',
-          accent: '#228823',
-        },
-      };
-
     return (
         <View style={{backgroundColor: '#6a6'}}>
-        <Appbar.Header>
-            <Appbar.Content title="TODO App" subtitle="Keep track of your daily work" />
-            <Appbar.Action icon="dots-vertical" />
-        </Appbar.Header>
         <ScrollView>
             <View style={{margin: 15, padding: 15, backgroundColor: '#353'}}>
                 <View style={{backgroundColor: '#383', padding: 5}}>

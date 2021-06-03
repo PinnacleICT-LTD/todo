@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Image, ScrollView} from 'react-native';
-import { TextInput, Appbar, Button, Paragraph, Title, Subheading } from 'react-native-paper';
+import { TextInput, Button, Paragraph, Title, Subheading } from 'react-native-paper';
 
-export default function register({navigation}) {
+export default function register( { navigation }) {
 
   const pressHandler = () => {
-    navigation.navigate('getting_started');
+    navigation.navigate('Login');
   }
     return (
       <View style={{backgroundColor: '#6a6'}}>
@@ -71,7 +71,9 @@ export default function register({navigation}) {
                   <Button
                     style={{marginLeft: 5}}
                     mode='contained'
-                    onPress={pressHandler}>
+                    onPress={
+                      pressHandler
+                    }>
                     Sign in
                   </Button>
                 </Paragraph>

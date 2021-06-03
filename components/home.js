@@ -1,31 +1,14 @@
 import React from 'react';
-import { Title, Appbar, Button, DefaultTheme, Provider as Paper, Paragraph} from 'react-native-paper';
-import {View, ScrollView, Image} from 'react-native';
+import { View, ScrollView, Image } from 'react-native';
+import { Title, Paragraph, Button } from "react-native-paper";
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function Main({ navigation }){
-const theme = {
-    ...DefaultTheme,
-    roundness: 2,
-    colors: {
-      ...DefaultTheme.colors,
-      primary: '#349955',
-      accent: '#228823',
-    },
-  };
+export default function Main( { navigation } ){
 
-  const pressHandler = () => {
-    navigation.navigate('getting_started');
-  }
- 
-  
     return (
-      <View theme={theme}>
+      <View style={{backgroundColor: '#6a6'}}>
         <ScrollView>
           <View style={{backgroundColor: '#6a6'}}>
-            <Appbar.Header>
-              <Appbar.Content title="TODO App" subtitle="Keep track of your daily work" />
-              <Appbar.Action icon="dots-vertical" />
-            </Appbar.Header>
             
             <View style={{margin: 15, padding: 15, backgroundColor: '#353'}}>
               <View style={{paddingBottom: 15}}>
@@ -50,7 +33,9 @@ const theme = {
                 <View style={{marginTop: 50, marginBottom: 10, width: 'auto', marginLeft: 'auto', marginRight: 'auto'}}>
                   <Button
                     mode="contained"
-                    onPress={pressHandler}>
+                    onPress={
+                      () => navigation.navigate('Register')
+                    }>
                     Getting Started
                   </Button>
                 </View>

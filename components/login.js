@@ -2,10 +2,14 @@ import React from 'react';
 import {ScrollView, View, Image} from 'react-native';
 import {TextInput, Title, Button} from 'react-native-paper';
 
-export default function login({navigation}) {
+export default function login( { navigation} ) {
 
+    const pressHandler = () => {
+        navigation.navigate('AddTask');
+    }
     
     return (
+        <View style={{backgroundColor: '#6a6'}}>
         <ScrollView>
             <View style={{margin: 15, padding: 15, backgroundColor: '#353'}}>
                 <View>
@@ -13,7 +17,7 @@ export default function login({navigation}) {
                         <Title>Welcome Back!</Title>
                     </View>
                     <View style={{marginLeft: 'auto', marginRight: 'auto', marginLeft: 15}}>
-                        <Image source={require('../assets/icon.png')} style={{width: 200, height:200}}/>
+                        <Image source={require('../assets/icon.png')} style={{width: 200, height:200, margin: 'auto', marginRight: 'auto'}}/>
                     </View>
 
                     <View>
@@ -30,12 +34,16 @@ export default function login({navigation}) {
 
                     <View style={{marginTop: 50, marginBottom: 10, borderRadius: 5, width: 'auto', marginLeft: 'auto', marginRight: 'auto'}}>
                         <Button
-                        mode="contained">
+                        mode="contained"
+                        onPress={
+                            pressHandler
+                        }>
                         Login
                         </Button>
                     </View>
                 </View>
             </View>
         </ScrollView>
+        </View>
     );
 }
