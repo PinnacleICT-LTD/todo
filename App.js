@@ -17,7 +17,7 @@ const MyStack = () => {
       headerMode="screen"
       screenOptions={{
         headerTintColor: 'white',
-        headerStyle: { backgroundColor: '#353142' },
+        headerStyle: { backgroundColor: '#359a42' },
       }}
     >
       <Stack.Screen
@@ -25,7 +25,6 @@ const MyStack = () => {
         component={Home}
         options={{
           title: 'TODO App',
-          subtitle: 'Keep your daily routine'
         }}
       />
       <Stack.Screen

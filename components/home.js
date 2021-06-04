@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, ScrollView, Image } from 'react-native';
 import { Title, Paragraph, Button } from "react-native-paper";
-import { createStackNavigator } from '@react-navigation/stack';
 
 export default function Main( { navigation } ){
 

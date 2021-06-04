@@ -1,6 +1,7 @@
 import React from 'react';
 import {ScrollView, View, Image} from 'react-native';
 import {TextInput, Title, Button} from 'react-native-paper';
+import Mobile from '../components/mobile.tsx';
 
 export default function login( { navigation} ) {
 
@@ -16,8 +17,8 @@ export default function login( { navigation} ) {
                     <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
                         <Title>Welcome Back!</Title>
                     </View>
-                    <View style={{marginLeft: 'auto', marginRight: 'auto', marginLeft: 15}}>
-                        <Image source={require('../assets/icon.png')} style={{width: 200, height:200, margin: 'auto', marginRight: 'auto'}}/>
+                    <View style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                        <Mobile style={{width: 200, height:200, }}/>
                     </View>
 
                     <View>
